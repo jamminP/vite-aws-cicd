@@ -32,3 +32,6 @@ jobs:
       - name: S3에 빌드하기
         run: |
           aws s3 cp ./dist s3://oz-aws-pratice/ --recursive
+
+      - name: Cloudfront 캐시 무효화 하기
+        run: aws cloudfront create-invalidation --distribution-id ELHTWV7N7U7I --paths "/*"
