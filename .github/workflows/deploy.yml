@@ -19,11 +19,11 @@ jobs:
         run: npm run build
 
       - name: AWS Resource에 접근할 수 있게 AWS 인증 설정
-        run: aws-actions/configure-aws-credentials@v4
+        uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-region: ap-northease-2
-          aws-access-key-id: ${{AWS_ACCESS_KEY_ID}}
-          aws-secret-access-key: ${{AWS_SECRET_ACCESS_KEY}}
+          aws-access-key-id: ${{ AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ AWS_SECRET_ACCESS_KEY }}
 
       - name: S3 기존 파일들 전체 삭제
         run: |
